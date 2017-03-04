@@ -1,3 +1,8 @@
 website/bower_components
 website/css/*.css
 website/css/*.map
+website/.temp
+website/.sass-cache
+*~*
+.DS_Store
+.DS_Store

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>MoreWithLess</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -23,118 +23,39 @@
 
     <div ng-controller="MainCtrl" ng-cloak>
       <md-content>
-
         <div class="header">
-              <div class="navbar navbar-default" role="navigation">
-                <div class="container">
-                  <div class="navbar-header">
-
-                    <a class="navbar-brand" href="#/">morewithless</a>
-                  </div>
-
-                  <div class="collapse">
-
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="#/">Home</a></li>
-                      <li><a ng-href="#/about">About</a></li>
-                      <li><a ng-href="#/">Contact</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+              <!--<md-truncate style="position: absolute; left: 90px; right: 170px; top: 13px; bottom: 13px;">Toolbar with Standard Buttons</md-truncate>-->
+              <span flex></span>
+              <md-button href="#comofunciona" aria-label="Learn More">
+                Como funciona
+              </md-button>
+              <md-button href="#cuantodonar" aria-label="Learn More">
+                Cuanto donar
+              </md-button>
+              <md-button href="#empresa" aria-label="Learn More">
+                Empresa morewithless
+              </md-button>
+              <md-button href="#opiniones" aria-label="Learn More">
+                Opiniones
+              </md-button>
+              <md-button href="#acceder" class="md-raised md-secondary" aria-label="Learn More">
+                Acceder
+              </md-button>
+              <span flex></span>
             </div>
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button>{{title1}}</md-button>
-          <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
-          <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
-          <md-button class="md-warn">{{title4}}</md-button>
-          <div class="label">Flat</div>
-        </section>
-
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-raised">Button</md-button>
-          <md-button class="md-raised md-primary">Primary</md-button>
-          <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-          <md-button class="md-raised md-warn">Warn</md-button>
-          <div class="label">Raised</div>
-        </section>
-
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-            <md-button class="md-fab" aria-label="Eat cake">
-                <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
-            </md-button>
-
-            <md-button class="md-fab md-primary" aria-label="Use Android">
-              <md-icon md-svg-src="img/icons/android.svg"></md-icon>
-            </md-button>
-
-            <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
-                <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
-            </md-button>
-
-            <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
-                <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
-            </md-button>
-
-            <md-button class="md-fab md-mini" aria-label="Eat cake">
-                <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
-            </md-button>
-
-            <md-button class="md-fab md-mini md-primary" aria-label="Use Android">
-              <md-icon md-svg-src="img/icons/android.svg" style="color: greenyellow;"></md-icon>
-            </md-button>
-          <div class="label">FAB</div>
-        </section>
-
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-            <md-button ng-href="{{googleUrl}}" target="_blank">Default Link</md-button>
-            <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Primary Link</md-button>
-
-            <md-button>Default Button</md-button>
-          <div class="label">Link vs. Button</div>
-        </section>
-
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
-          <md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
-          <md-button class="md-accent">Accent</md-button>
-          <md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>
-          <div class="label">Themed</div>
-        </section>
-
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-icon-button md-primary" aria-label="Settings">
-            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
-          </md-button>
-          <md-button class="md-icon-button md-accent" aria-label="Favorite">
-            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
-          </md-button>
-          <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-          </md-button>
-          <md-button href="http://google.com"
-                    title="Launch Google.com in new window"
-                    target="_blank"
-                    ng-disabled="true"
-                    aria-label="Google.com"
-                    class="md-icon-button launch" >
-            <md-icon md-svg-icon="img/icons/launch.svg"></md-icon>
-          </md-button>
-          <div class="label">Icon Button</div>
-        </section>
+          </md-toolbar>
+        </div>
+        <div class="container">
+          <div ng-view=""></div>
+        </div>
+        <div class="footer">
+          <div class="container">
+            <i class="fa fa-heart"></i> Morewithless
+          </div>
+        </div>
       </md-content>
-    </div>
-
-    <!-- Add your site or application content here -->
-
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
     </div>
 
 

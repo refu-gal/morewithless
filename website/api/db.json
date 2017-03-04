@@ -1,0 +1,133 @@
+{
+    "companies":[
+        {
+            "CIF":  "21432923j",
+            "name": "Company SA"
+        },
+        {
+            "CIF":  "21432933j",
+            "name": "Company SB"
+        },
+        {
+            "CIF":  "21532933j",
+            "name": "Company SC"
+        }
+    ],
+    "campaigns":[
+        {
+            "id":1,
+            "name":"Campaign 1",
+            "description":"short description of campaign",
+            "objective":"100000",
+            "current":"100",
+            "currency":"€"
+        },
+        {
+            "id":2,
+            "name":"Campaign 2",
+            "description":"short description of campaign",
+            "objective":"200000",
+            "current":"2000",
+            "currency":"€"
+        },
+        {
+            "id":3,
+            "name":"Campaign 3",
+            "description":"short description of campaign",
+            "objective":"2000",
+            "current":"1000",
+            "currency":"€"
+        },
+        {
+            "id":4,
+            "name":"Campaign 4",
+            "description":"short description of campaign",
+            "objective":"500",
+            "current":"2000",
+            "currency":"€"
+        }
+        
+    ],
+    "worker":[
+        {
+            "username":"user1",
+            "name":"name surname",
+            "quantity":"5",
+            "campaigns":[ 1,2 ]
+        },
+        {
+            "username":"user2",
+            "name":"name surname",
+            "quantity":"5",
+            "campaigns":[ 1,2,3,4 ]
+        },
+        {
+            "username":"user3",
+            "name":"name surname",
+            "quantity":"5",
+            "campaigns":[ 4 ]
+        },
+        {
+            "username":"user4",
+            "name":"name surname",
+            "quantity":"5",
+            "campaigns":[ 3,2 ]
+        },
+        {
+            "username":"user5",
+            "name":"name surname",
+            "quantity":"5",
+            "campaigns":[ 2,3 ]
+        }
+    ],
+    "users":[
+        {
+            "username":"company1",
+            "password":"company1",
+            "company":"21432923j",
+            "isCompany": true
+        },
+        {
+            "username":"company2",
+            "password":"company2",
+            "company":"21432933j",
+            "isCompany": true
+        },
+        {
+            "username":"company3",
+            "password":"company3",
+            "company":"21532933j",
+            "isCompany": true
+        },
+        {
+            "username":"user1",
+            "password":"user1",
+            "company":"21432923j",
+            "isAuthorized": true
+        },
+        {
+            "username":"user2",
+            "password":"user2",
+            "company":"21532933j",
+            "isAuthorized": false
+        },
+        {
+            "username":"user3",
+            "password":"user3",
+            "company":"21532933j",
+            "isAuthorized": true
+        },
+        {
+            "username":"user4",
+            "password":"user4",
+            "company":"21432933j",
+            "isAuthorized": true
+        },
+        {
+            "username":"user5",
+            "password":"user5",
+            "company":"21432933j",
+            "isAuthorized": true
+        }
+    ]
+}

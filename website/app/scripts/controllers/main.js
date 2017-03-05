@@ -8,7 +8,7 @@
  * Controller of the morewithlessApp
  */
 angular.module('morewithlessApp')
-.controller('MainCtrl', function ($location,$scope, $mdDialog, $rootScope,campaign,user,authentification) {
+.controller('MainCtrl', function ($location, $mdToast,$scope, $mdDialog, $rootScope,campaign,user,authentification) {
   
   $scope.campaigns = []
   $scope.campaigns = campaign.getAllCampaigns()
@@ -40,13 +40,19 @@ angular.module('morewithlessApp')
   $scope.goToProfile = function(){
     user.getByUsername($rootScope.globals.currentUser.username).then(
       function(data){
-        console.log("data %O",data)
         if(data.isCompany){
-          console.log('im a company, jump to company view')
           $location.path( "/company" );
+          return
         }
-        if(!data.isAuthorized) return
-        console.log('im not a company, jump to worker view')
+        if(!data.isAuthorized){
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent('A la espera de que tu empresa te autorice!')
+              .position("botom")
+              .hideDelay(3000)
+          );
+          return
+        }
         $location.path( "/worker" );
       },
       function(err){

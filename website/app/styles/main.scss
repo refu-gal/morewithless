@@ -69,6 +69,7 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
+    margin:0 auto;
   }
 
   /* Remove the padding we set earlier */
@@ -86,4 +87,29 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+.radioelement{
+  padding: 15px;
+  md-icon.fa-3x{
+    height: auto;
+    line-height: 70px;
+  }
+  > div{
+    > span{
+      font-weight: 600;
+      font-style: italic;
+    }
+  }
+  /*md-radio-button{
+    width: 20px;
+    height: 20px;
+    margin:0;
+    padding: 5px;
+    .md-label{
+      display: none;
+    }
+  }*/
+}
+.summary{
+  padding: 10px;
 }

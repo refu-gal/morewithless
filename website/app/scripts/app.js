@@ -17,6 +17,11 @@ angular
     'ngSanitize',
     'ngMaterial'
   ])
+  .config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('red')
+    .accentPalette('indigo');
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

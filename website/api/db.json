@@ -99,12 +99,19 @@
     {
       "id": "user3",
       "password": "user3",
-      "company": "21532933j",
+      "company": {
+        "id": "company3",
+        "password": "company3",
+        "updated": "2017-03-05",
+        "company": "21532933j",
+        "isCompany": true,
+        "name": "Company SC"
+      },
       "nif": "1234569k",
       "updated": "2017-01-05",
       "isAuthorized": true,
       "name": "name surname",
-      "quantity": "5",
+      "quantity": 3,
       "campaigns": [
         4
       ]

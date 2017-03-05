@@ -8,6 +8,17 @@
  * Service in the morewithlessApp.
  */
 angular.module('morewithlessApp')
-  .service('worker', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('worker', function ($resource) {
+    var workerResource = $resource(
+      location.protocol + '//' + location.host+':8080'+'/worker'
+    )
+    var workerFactory = {
+      getAllworkers: getAllworkers
+    }  
+      
+    function getAllworkers(){
+      return workerResource.query()
+    }
+    
+    return workerFactory
   });

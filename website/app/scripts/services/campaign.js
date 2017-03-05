@@ -17,7 +17,7 @@ angular.module('morewithlessApp')
     }  
       
     function getAllCampaigns(){
-      return campaignResource.query()
+      return campaignResource.query().$promise
     }
     
     return campaignFactory

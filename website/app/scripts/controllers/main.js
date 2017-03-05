@@ -14,7 +14,8 @@ angular.module('morewithlessApp')
   $scope.campaigns = campaign.getAllCampaigns()
   $scope.users = []
   $scope.users = user.getAllusers()
-  
+  $scope.currentUser = {}
+
   authentification.verifyCredentials()
   $scope.showLoginDialog = function(ev){
     $mdDialog.show({
@@ -40,6 +41,7 @@ angular.module('morewithlessApp')
   $scope.goToProfile = function(){
     user.getByUsername($rootScope.globals.currentUser.username).then(
       function(data){
+        $scope.currentUser = data
         if(data.isCompany){
           $location.path( "/company" );
           return

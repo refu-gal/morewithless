@@ -1,1 +1,59 @@
-<p>This is the worker view.</p>
+<md-content layout="column" class="layout-padding">
+    <div layout="column">
+        <form name="userForm" layout-align="center center">
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Compañía</label>
+                <input ng-model="currentUser.company.name" disabled>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Nombre</label>
+                <input ng-model="currentUser.name" ng-focus="focusname($event)">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>NIF</label>
+                <input ng-model="currentUser.nif">
+            </md-input-container>
+
+            <h3>Contribución</h3>
+            <md-divider></md-divider>
+
+            <md-radio-group ng-model="currentUser.quantity" layout="row">
+                <div ng-repeat="contribution in contributionOptions" class="row" flex>
+                    <div class="radioelement" layout="column" layout-align="center center">
+                        <div flex style="max-width:200px;" layout="column">
+                            <md-icon md-font-icon="{{contribution.icon}}" class="fa fa-3x s32 md-secondary md-hue-1" aria-label="Cancelar"></md-icon>
+                            <span>{{contribution.quantity}}&euro; ~ {{contribution.equivalent}} </span>
+                        </div>
+                        <md-radio-button flex ng-value="contribution.quantity" class="md-secondary" aria-label="{{contribution.quantity}}&euro; ~ {{contribution.equivalent}}">
+                        </md-radio-button>
+                    </div>
+                </div>
+            </md-radio-group>
+
+            <md-divider></md-divider>
+            <div class="summary" flex layout="row" layout-align="space-between center">
+                <div flex-initial>
+                    Con esa contribución, podrías contribuir para <i>{{selectedContribution()}}</i>
+                </div>
+            </div>
+
+            <h3>Campañas</h3>
+            <md-divider></md-divider>
+            <md-list ng-cloak>
+                <md-list-item ng-repeat="campaign in campaigns" layout="row">
+                    <div layout="column" flex layout-wrap>
+                        <div layout="row" flex layout-wrap>
+                            <p><b> {{ campaign.name }}: </b><i> {{ campaign.description }} </i></p>
+                        </div>
+                        <md-progress-linear  md-mode="determinate" value="{{(campaign.current/campaign.objective)*100}}"></md-progress-linear>
+                    </div>
+                    <md-checkbox class="md-secondary" ng-model="campaign.selected"></md-checkbox>
+                </md-list-item>
+            </md-list>
+
+        </form>
+    </div>
+</md-content>

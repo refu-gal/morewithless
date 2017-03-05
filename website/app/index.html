@@ -40,8 +40,14 @@
               <md-button href="#opiniones" aria-label="Learn More">
                 Opiniones
               </md-button>
-              <md-button href="#acceder" class="md-raised md-secondary" aria-label="Learn More">
+              <md-button ng-if="!globals.currentUser" href="#acceder" class="md-raised md-secondary"  ng-click="showLoginDialog()" aria-label="Learn More">
                 Acceder
+              </md-button>
+              <md-button ng-if="globals.currentUser" href="#perfil" class="md-secondary" ng-click="goToProfile()" aria-label="View profile">
+                {{globals.currentUser.username}}
+              </md-button>
+              <md-button ng-if="globals.currentUser" href="#salir" class="md-secondary"  ng-click="logout()" aria-label="Logout">
+                Salir
               </md-button>
               <span flex></span>
             </div>
